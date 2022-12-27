@@ -1,0 +1,4 @@
+void main()
+{
+directory_create("./restarter_kill");
+}

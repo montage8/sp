@@ -1,0 +1,17 @@
+mapname:robotland7
+maxx:200
+maxy:200
+maxz:200
+zone:0:200:0:200:0:200:robot land brutal level
+travelpoint:0:200:0:0:0:200:세이프존:0:0:-20:포탈:0
+zone:0:200:0:0:0:200:여기를 통해 탈출하세요.
+travelpoint:0:200:200:200:0:200:세이프존:0:0:-20:포탈:0
+zone:0:200:200:200:0:200:여기를 통해 탈출하세요.
+tile:0:200:0:200:0:0:concrete2
+src:0:200:0:200:0:200:traffic
+robots:0:200:0:200:0:0:7:500:avs_micro,cockroach,metallurgist,plasma_cannon,robocop,soldier,train:.:1
+public:0
+noitem:-50000000:50000000:-50000000:50000000:-50000000:50000000:nuclear_bomb
+startingx:100
+startingy:100
+startingz:0

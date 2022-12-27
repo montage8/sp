@@ -1,0 +1,220 @@
+http download;
+void update()
+{
+
+file sp;
+string binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/sp_up.exe");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("sp_up.exe","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+
+run("sp_up.exe", "", false, false);
+
+
+
+
+
+}
+
+
+void cupdate()
+{
+file sp;
+string binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/sp_cup.exe");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("sp_cup.exe","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+run("sp_cup.exe", "1", false, false);
+}
+void soundupdate()
+{
+
+speak("필요한 구성요소 다운로드중");
+
+
+file sp;
+string binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/sp_sup.exe");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("sp_sup.exe","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+run("sp_sup.exe", "", false, false);
+
+
+
+
+
+
+}
+
+void mapupdate()
+{
+
+speak("mapdata파일 다운로드합니다.");
+
+
+file sp;
+string binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/ambience.txt");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("ambience.txt","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/door.txt");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("door.txt","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+binary=download.get("http://kt9020.kr/content/downloads/06/11/macOS/11/10-301-30jfuiefjefdbcyr73-rirjmefjfnhfgeyegfytryref-fjfewjoijfioe/tile.txt");
+if(get_last_error()<0)
+{
+alert("Error", "다운로드 도중 오류가 발생했습니다. 네트워크 상태를 확인하고 다시 시도하십시오.");
+exit();
+}
+sp.open("tile.txt","wb");
+if(sp.active==false)
+{
+alert("Error", "파일을 열 수 없습니다. 다운로드를 다시 시도하십시오.");
+exit();
+}
+while(download.progress)
+{
+binary+=download.request();
+if(binary.length()>=8192)
+{
+sp.write(binary);
+binary="";
+}
+
+}
+if(binary!="")
+{
+sp.write(binary);
+}
+sp.close();
+file_copy("ambience.txt", "mapdata\\ambience.txt", true);
+file_copy("door.txt", "mapdata\\door.txt", true);
+file_copy("tile.txt", "mapdata\\tile.txt", true);
+file_delete("ambience.txt");
+file_delete("door.txt");
+file_delete("tile.txt");
+
+}
+
+void mainupdate()
+{
+run("update.exe", "", true, true);
+}
+
+
+
+

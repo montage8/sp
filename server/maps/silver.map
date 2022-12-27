@@ -1,0 +1,10 @@
+mapname:silver
+owner:silver_wolf
+maxx:100
+maxy:100
+survival:0
+tile:0:100:0:100:0:0:100
+tile:0:100:0:100:0:0:ball
+fightingstate:1
+
+tile:50:50:50:50:150:150:air

@@ -1,0 +1,8 @@
+LIBRARY speech
+EXPORTS
+sensereader_init
+speak
+stopspeaking
+getsensereaderid
+geterrorstring
+sensereader_release
